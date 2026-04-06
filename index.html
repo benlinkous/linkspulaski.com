@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LinksPulaski — Pulaski, Virginia</title>
+<meta name="description" content="Hyperlocal writing, business spotlights, and community coverage from Pulaski, Virginia. Main Street, Calfee Park, and the people who make Pulaski worth staying for." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#1a2744;--navy2:#0f1a30;
+  --copper:#8b4513;--copper2:#a0522d;--copper-light:#c47a45;
+  --cream:#f7f2ea;--cream2:#ede8dc;--cream3:#e3d9c8;
+  --rule:#c5b49e;--muted:#8a7a68;--faint:#b0a090;
+  --text:#1c1510;
+  --sans:'Barlow',sans-serif;--condensed:'Barlow Condensed',sans-serif;
+  --serif:'Playfair Display',Georgia,serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--text);font-family:var(--sans);line-height:1.7;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+header{background:var(--navy);border-bottom:4px solid var(--copper);}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;border-bottom:1px solid rgba(255,255,255,0.08);}
+.brand{display:flex;flex-direction:column;}
+.brand-name{font-family:var(--condensed);font-size:2rem;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;color:#fff;line-height:1;}
+.brand-name em{color:var(--copper-light);font-style:normal;}
+.brand-sub{font-family:var(--sans);font-size:0.62rem;font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:0.2rem;}
+.header-loc{text-align:right;font-family:var(--condensed);font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.35);line-height:1.7;}
+nav{display:flex;align-items:center;padding:0;overflow-x:auto;}
+nav a{font-family:var(--condensed);font-size:0.68rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.65);padding:0.65rem 1.4rem;border-right:1px solid rgba(255,255,255,0.08);transition:all 0.2s;white-space:nowrap;}
+nav a:hover{background:rgba(255,255,255,0.07);color:#fff;}
+.nav-toggle{display:none;background:none;border:none;color:rgba(255,255,255,0.65);padding:0.65rem 1.4rem;cursor:pointer;font-family:var(--condensed);font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;}
+@media(max-width:760px){
+  .header-top{padding:0.85rem 1.5rem;flex-wrap:wrap;}
+  .header-loc{display:none;}
+  .nav-toggle{display:block;}
+  nav{display:none;flex-direction:column;}
+  nav.open{display:flex;}
+  nav a{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);width:100%;}
+}
+
+.hero{background:var(--navy2);padding:5rem 2.5rem 4rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 60%,rgba(139,69,19,0.15) 0%,transparent 65%);}
+.hero-inner{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+.hero-kicker{font-family:var(--condensed);font-size:0.68rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--copper-light);margin-bottom:1.25rem;display:flex;align-items:center;justify-content:center;gap:0.75rem;}
+.hero-kicker::before,.hero-kicker::after{content:'';width:20px;height:1px;background:var(--copper-light);}
+.hero h1{font-family:var(--condensed);font-size:clamp(2.8rem,7vw,5rem);font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:1rem;}
+.hero h1 em{color:var(--copper-light);font-style:normal;}
+.hero-sub{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:rgba(255,255,255,0.65);line-height:1.8;max-width:520px;margin:0 auto 2.5rem;}
+.btn-copper{display:inline-block;background:var(--copper);color:#fff;font-family:var(--condensed);font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:0.85rem 1.75rem;border:2px solid var(--copper2);transition:background 0.2s;margin:0.25rem;}
+.btn-copper:hover{background:var(--copper2);}
+.btn-ghost{display:inline-block;background:transparent;color:rgba(255,255,255,0.8);font-family:var(--condensed);font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;padding:0.85rem 1.75rem;border:2px solid rgba(255,255,255,0.2);transition:border-color 0.2s;margin:0.25rem;}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.6);}
+
+.ticker{background:var(--copper);padding:0.6rem 2.5rem;display:flex;align-items:center;gap:1.5rem;border-bottom:1px solid var(--copper2);overflow:hidden;}
+.ticker-label{font-family:var(--condensed);font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;white-space:nowrap;background:var(--copper2);padding:0.2rem 0.75rem;flex-shrink:0;}
+.ticker-items{font-family:var(--condensed);font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.85);white-space:nowrap;}
+
+.main{max-width:1060px;margin:0 auto;padding:3rem 2.5rem;}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:3px solid var(--text);}
+.section-title{font-family:var(--condensed);font-size:1.4rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);}
+.section-link{font-family:var(--condensed);font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--copper);transition:color 0.2s;}
+.section-link:hover{color:var(--text);}
+
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:start;margin-bottom:4rem;}
+.about-text p{font-size:0.975rem;color:var(--muted);line-height:1.9;margin-bottom:1rem;}
+.about-text p strong{color:var(--text);}
+.about-sidebar{}
+.sidebar-box{background:var(--navy);color:#fff;padding:1.75rem;margin-bottom:1rem;}
+.sidebar-box h3{font-family:var(--condensed);font-size:1rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#fff;margin-bottom:0.75rem;}
+.sidebar-box p{font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:1rem;}
+.sidebar-btn{display:block;text-align:center;background:var(--copper);color:#fff;font-family:var(--condensed);font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:0.6rem 1rem;transition:background 0.2s;}
+.sidebar-btn:hover{background:var(--copper2);}
+
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-bottom:4rem;}
+.pillar{background:var(--cream);padding:1.75rem;border-top:3px solid var(--navy);}
+.pillar-icon{font-size:1.5rem;margin-bottom:0.75rem;display:block;}
+.pillar h3{font-family:var(--condensed);font-size:1rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--text);margin-bottom:0.4rem;}
+.pillar p{font-size:0.875rem;color:var(--muted);line-height:1.65;}
+.pillar-tag{font-family:var(--condensed);font-size:0.55rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--copper);margin-top:0.5rem;display:inline-block;}
+
+.coming-band{background:var(--navy);padding:4rem 2.5rem;text-align:center;border-top:4px solid var(--copper);}
+.coming-inner{max-width:580px;margin:0 auto;}
+.coming-band h2{font-family:var(--condensed);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:#fff;margin-bottom:0.75rem;}
+.coming-band p{font-size:0.95rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:2rem;}
+
+.site-footer{background:var(--text);border-top:3px solid var(--copper);padding:2rem 2.5rem;}
+.footer-inner{max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.footer-brand{font-family:var(--condensed);font-size:1.1rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#fff;}
+.footer-brand em{color:var(--copper-light);font-style:normal;}
+.footer-copy{font-family:var(--condensed);font-size:0.55rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.25);}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity 0.6s,transform 0.6s;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:860px){
+  .about-grid{grid-template-columns:1fr;gap:2rem;}
+  .pillars-grid{grid-template-columns:1fr 1fr;}
+  .main{padding:2.5rem 1.5rem;}
+  .hero{padding:3.5rem 1.5rem 3rem;}
+  .coming-band{padding:3rem 1.5rem;}
+  .site-footer{padding:1.75rem 1.5rem;}
+  .footer-inner{flex-direction:column;text-align:center;}
+}
+@media(max-width:520px){.pillars-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="brand">
+      <div class="brand-name"><em>Links</em>Pulaski</div>
+      <div class="brand-sub">Pulaski, Virginia</div>
+    </div>
+    <button class="nav-toggle" id="navToggle">Menu</button>
+    <div class="header-loc">Town of Pulaski<br>Pulaski County, Virginia</div>
+  </div>
+  <nav id="mainNav">
+    <a href="#about">About Pulaski</a>
+    <a href="#pillars">What We Cover</a>
+    <a href="#coming">Get Involved</a>
+    <a href="https://linksnrv.com" target="_blank" rel="noopener">LinksNRV →</a>
+    <a href="https://callmelink.org" target="_blank" rel="noopener">Call Me Link →</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Hyperlocal · Pulaski, Virginia</div>
+    <h1>Pulaski Is Worth <em>Knowing</em></h1>
+    <p class="hero-sub">A town with a real Main Street, a legendary ballpark, and people who chose to stay and build something. This is the close-up view.</p>
+    <div>
+      <a href="#about" class="btn-copper">About Pulaski</a>
+      <a href="#pillars" class="btn-ghost">What We Cover</a>
+    </div>
+  </div>
+</div>
+
+<div class="ticker">
+  <div class="ticker-label">Pulaski</div>
+  <div class="ticker-items">Main Street · Calfee Park · Downtown Revitalization · Local Business · Planning Commission · Pulaski County · New River Valley</div>
+</div>
+
+<div class="main">
+  <div class="section-header reveal">
+    <div class="section-title">About This Site</div>
+  </div>
+  <div class="about-grid reveal" id="about">
+    <div class="about-text">
+      <p>Pulaski doesn't make many national headlines. It doesn't have a famous skyline or a major airport. What it has is something harder to manufacture — <strong>a real town with real people</strong> who have been building something here for generations.</p>
+      <p>I grew up in Pulaski. I rode my bike on Lake Street, was a bat boy at Calfee Park, and have watched this town change over decades. I left to serve in the Army and came back. That gives me a particular kind of investment in what happens here.</p>
+      <p>LinksPulaski is the hyperlocal companion to LinksNRV — zoomed all the way in on the town at the heart of the New River Valley. The businesses on Main Street. The decisions made at Planning Commission. The things worth celebrating and the things worth questioning.</p>
+      <p>Written by someone who lives here, serves here, and cares about what this town becomes.</p>
+    </div>
+    <div class="about-sidebar">
+      <div class="sidebar-box">
+        <h3>Call Me Link</h3>
+        <p>Civic writing from Pulaski — community, politics, the Good Neighbor Project, and what it means to show up for a town.</p>
+        <a href="https://callmelink.org" target="_blank" rel="noopener" class="sidebar-btn">Read CallMeLink.org →</a>
+      </div>
+      <div class="sidebar-box">
+        <h3>LinksNRV</h3>
+        <p>The broader New River Valley view — Mom & Pop stores, farm-to-table, restaurants, and local business across the NRV.</p>
+        <a href="https://linksnrv.com" target="_blank" rel="noopener" class="sidebar-btn">Read LinksNRV.com →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header reveal" id="pillars">
+    <div class="section-title">What We Cover</div>
+  </div>
+  <div class="pillars-grid reveal">
+    <div class="pillar">
+      <span class="pillar-icon">🏪</span>
+      <h3>Main Street</h3>
+      <p>The businesses, storefronts, and people that define downtown Pulaski — what's opening, what's thriving, and what needs support.</p>
+      <span class="pillar-tag">Downtown Pulaski</span>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">⚾</span>
+      <h3>Calfee Park & Events</h3>
+      <p>The legendary ballpark that anchors summer in Pulaski — and the events, gatherings, and community moments that happen here.</p>
+      <span class="pillar-tag">Community Life</span>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">🏛️</span>
+      <h3>Local Government</h3>
+      <p>Planning Commission, Town Council, and the decisions that shape what Pulaski becomes. Civic participation starts with showing up.</p>
+      <span class="pillar-tag">Civic Action</span>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">🤝</span>
+      <h3>Local Business</h3>
+      <p>Spotlights on the independent businesses that make Pulaski worth shopping in — and the collaboration that makes them stronger.</p>
+      <span class="pillar-tag">Small Business</span>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">🌱</span>
+      <h3>Revitalization</h3>
+      <p>The ongoing work of making Pulaski better — from infrastructure to new businesses to the culture of investment in our own town.</p>
+      <span class="pillar-tag">Forward Pulaski</span>
+    </div>
+    <div class="pillar">
+      <span class="pillar-icon">👋</span>
+      <h3>Good Neighbor Project</h3>
+      <p>Making a difference starts on your own street. The Good Neighbor Project is about knowing your neighbors and showing up.</p>
+      <span class="pillar-tag">Community</span>
+    </div>
+  </div>
+</div>
+
+<div class="coming-band" id="coming">
+  <div class="coming-inner">
+    <h2>Stories Coming Soon</h2>
+    <p>Content is being written. Follow Call Me Link on Substack for the first pieces — Pulaski stories will live there until this site is fully built out.</p>
+    <a href="https://substack.com/@callmelink" target="_blank" rel="noopener" class="btn-copper">Follow on Substack</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><em>Links</em>Pulaski</div>
+    <div class="footer-copy">© <span id="yr"></span> Ben Linkous · Pulaski, Virginia · Written locally</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('navToggle').addEventListener('click',function(){
+  const n=document.getElementById('mainNav');
+  n.classList.toggle('open');
+  this.textContent=n.classList.contains('open')?'Close':'Menu';
+});
+const obs=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
